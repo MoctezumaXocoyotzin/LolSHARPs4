@@ -320,11 +320,12 @@ namespace TwistedFateTexasHoldEm
                     if (enemy.IsValidTarget(Q.Range * 2))
                     {
                         var pred = Q.GetPrediction(enemy);
-                        if ((pred.Hitchance == HitChance.Immobile ) ||//&& autoQI) ||
-                            (pred.Hitchance == HitChance.Dashing ))//&& autoQD))
-                        {
-                            CastQ(enemy, pred.UnitPosition.To2D());
-                        }
+                        CastQ(enemy, pred.UnitPosition.To2D());
+                        //if ((pred.Hitchance == HitChance.Immobile ) ||//&& autoQI) ||
+                        //    (pred.Hitchance == HitChance.Dashing ))//&& autoQD))
+                        //{
+                        //    CastQ(enemy, pred.UnitPosition.To2D());
+                        //}
                     }
                 }
         }
