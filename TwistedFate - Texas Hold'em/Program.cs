@@ -314,18 +314,18 @@ namespace TwistedFateTexasHoldEm
             var autoQD = Config.Item("AutoQD").GetValue<bool>();
 
 
-            if (ObjectManager.Player.Spellbook.CanUseSpell(SpellSlot.Q) == SpellState.Ready)//&& (autoQD || autoQI))
+            if (ObjectManager.Player.Spellbook.CanUseSpell(SpellSlot.Q) == SpellState.Ready && combo)//&& (autoQD || autoQI))
                 foreach (var enemy in ObjectManager.Get<Obj_AI_Hero>())
                 {
                     if (enemy.IsValidTarget(Q.Range * 2))
                     {
                         var pred = Q.GetPrediction(enemy);
-                        CastQ(enemy, pred.UnitPosition.To2D());
-                        //if ((pred.Hitchance == HitChance.Immobile ) ||//&& autoQI) ||
-                        //    (pred.Hitchance == HitChance.Dashing ))//&& autoQD))
-                        //{
-                        //    CastQ(enemy, pred.UnitPosition.To2D());
-                        //}
+                        //CastQ(enemy, pred.UnitPosition.To2D());
+                        if ((pred.Hitchance == HitChance.Immobile ) ||//&& autoQI) ||
+                            (pred.Hitchance == HitChance.Dashing ))//&& autoQD))
+                        {
+                            CastQ(enemy, pred.UnitPosition.To2D());
+                        }
                     }
                 }
         }
