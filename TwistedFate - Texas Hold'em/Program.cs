@@ -99,13 +99,13 @@ namespace TwistedFateTexasHoldEm
 
             /*Drawing*/
             var Drawings = new Menu("Drawings", "Drawings");
-            Drawings.AddItem(new MenuItem("Qcircle", "Q Range").SetValue(new Circle(true, Color.FromArgb(100, 255, 0, 255))));
-            Drawings.AddItem(new MenuItem("Rcircle", "R Range").SetValue(new Circle(true, Color.FromArgb(100, 255, 255, 255))));
+            Drawings.AddItem(new MenuItem("Qcircle", "Q Range").SetValue(new Circle(false, Color.FromArgb(100, 255, 0, 255))));
+            Drawings.AddItem(new MenuItem("Rcircle", "R Range").SetValue(new Circle(false, Color.FromArgb(100, 255, 255, 255))));
             Drawings.AddItem(new MenuItem("Rcircle2", "R Range (minimap)").SetValue(new Circle(true, Color.FromArgb(255, 255, 255, 255))));
             Drawings.AddItem(dmgAfterComboItem);
             Config.AddSubMenu(Drawings);
 
-            Config.AddItem(new MenuItem("Combo", "Combo").SetValue(new KeyBind(32, KeyBindType.Press)));
+            Config.AddItem(new MenuItem("Combo", "Combo SBTW").SetValue(new KeyBind(32, KeyBindType.Press)));
 
             Config.AddToMainMenu();
 
@@ -264,7 +264,7 @@ namespace TwistedFateTexasHoldEm
                 dmg = dmg * 1.2;
             }
 
-            if (ObjectManager.Player.GetSpellSlot("SummonerIgnite") != SpellSlot.Unknown)
+            if (ObjectManager.Player.GetSpellSlot("summonerdot") != SpellSlot.Unknown)
             {
                 dmg += DamageLib.getDmg(hero, DamageLib.SpellType.IGNITE);
             }
@@ -302,7 +302,7 @@ namespace TwistedFateTexasHoldEm
             if (CardSelector.Status == SelectStatus.Selected && combo)
             {
                 var target = SOW.GetTarget();
-                if (target.IsValidTarget() && target is Obj_AI_Hero && Items.HasItem("DeathfireGrasp") && ComboDamage((Obj_AI_Hero)target) >= target.Health)
+                if (target.IsValidTarget() && target is Obj_AI_Hero && Items.HasItem("DeathfireGrasp") )//&& ComboDamage((Obj_AI_Hero)target) >= target.Health)
                 {
                     Items.UseItem("DeathfireGrasp", (Obj_AI_Hero)target);
                 }
@@ -314,14 +314,14 @@ namespace TwistedFateTexasHoldEm
             var autoQD = Config.Item("AutoQD").GetValue<bool>();
 
 
-            if (ObjectManager.Player.Spellbook.CanUseSpell(SpellSlot.Q) == SpellState.Ready && (autoQD || autoQI))
+            if (ObjectManager.Player.Spellbook.CanUseSpell(SpellSlot.Q) == SpellState.Ready)//&& (autoQD || autoQI))
                 foreach (var enemy in ObjectManager.Get<Obj_AI_Hero>())
                 {
                     if (enemy.IsValidTarget(Q.Range * 2))
                     {
                         var pred = Q.GetPrediction(enemy);
-                        if ((pred.Hitchance == HitChance.Immobile && autoQI) ||
-                            (pred.Hitchance == HitChance.Dashing && autoQD))
+                        if ((pred.Hitchance == HitChance.Immobile ) ||//&& autoQI) ||
+                            (pred.Hitchance == HitChance.Dashing ))//&& autoQD))
                         {
                             CastQ(enemy, pred.UnitPosition.To2D());
                         }
