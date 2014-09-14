@@ -49,10 +49,10 @@ namespace TwistedFateTexasHoldEm
         private static void Game_OnGameLoad(EventArgs args)
         {
             if (ObjectManager.Player.BaseSkinName != "TwistedFate") return;
-
+            
             Game.PrintChat(
                     string.Format(
-                        "<font color='#F7A100'>{0} v{1} loaded.</font>",
+                        "<font color='#0000FF'>{0} v{1} loaded.</font>",
                         Assembly.GetExecutingAssembly().GetName().Name,
                         Assembly.GetExecutingAssembly().GetName().Version
                         )
