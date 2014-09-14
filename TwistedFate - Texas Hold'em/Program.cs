@@ -114,8 +114,8 @@ namespace TwistedFateTexasHoldEm
             Drawings.AddItem(dmgAfterComboItem);
             Config.AddSubMenu(Drawings);
 
-            Config.AddItem(new MenuItem("Combo", "Combo SBTW").SetValue(new KeyBind(32, KeyBindType.Press)));
 
+            Config.AddItem(new MenuItem("Combo", "Combo SBTW").SetValue(new KeyBind(32, KeyBindType.Press)));
             Config.AddToMainMenu();
 
             Game.OnGameUpdate += Game_OnGameUpdate;
@@ -123,6 +123,13 @@ namespace TwistedFateTexasHoldEm
             Drawing.OnEndScene += DrawingOnOnEndScene;
             Obj_AI_Hero.OnProcessSpellCast += Obj_AI_Hero_OnProcessSpellCast;
             Orbwalking.BeforeAttack += OrbwalkingOnBeforeAttack;
+
+            //Farm with skills
+            var FarmWSkills = new Menu("Farm with Skills", "FarmWSkills");
+            FarmWSkills.AddItem(new MenuItem("QFarm", "Use Q").SetValue(true));
+            FarmWSkills.AddItem(new MenuItem("WFarm", "Use Red Card").SetValue(true));
+            FarmWSkills.AddItem(new MenuItem("FarmingSkills", "Use Skills to  farm??").SetValue(new KeyBind("V".ToCharArray()[0], KeyBindType.Press)));
+            Config.AddSubMenu(FarmWSkills);
         }
 
         private static void OrbwalkingOnBeforeAttack(Orbwalking.BeforeAttackEventArgs args)
@@ -281,6 +288,28 @@ namespace TwistedFateTexasHoldEm
             return (float)dmg;
         }
 
+
+        private static void SkillFarming()
+        {
+            if(!Orbwalking.CanMove(40)) return;
+            var allMinions = MinionManager.GetMinions(ObjectManager.Player.ServerPosition, Q.Range);
+            var useRedCardF = Config.Item("WFarm").GetValue<bool>();
+            var useQF = Config.Item("QFarm").GetValue<bool>();
+
+            if(useQF && Q.IsReady())
+            {
+                foreach (var minion in allMinions.Where(minion => minion.IsValidTarget() && HealthPrediction.GetHealthPrediction(minion, (int)(ObjectManager.Player.Distance(minion) * 1000 / 1400)) < 0.75 * DamageLib.getDmg(minion, DamageLib.SpellType.Q, DamageLib.StageType.FirstDamage)))
+                {
+                    if (Vector3.Distance(minion.ServerPosition, ObjectManager.Player.ServerPosition) > Orbwalking.GetRealAutoAttackRange(ObjectManager.Player))
+                    {
+                        Q.CastIfHitchanceEquals(minion, HitChance.High, true);
+                    }
+                }
+            }
+        }
+
+
+
         private static void Game_OnGameUpdate(EventArgs args)
         {
             if (Config.Item("PingLH").GetValue<bool>())
@@ -317,10 +346,17 @@ namespace TwistedFateTexasHoldEm
                 }
             }
 
+            //FARM WITH SKILLS
+            if (Config.Item("FarmingSkills").GetValue<KeyBind>().Active)
+            {
+                SkillFarming();
+            }
+
+
 
             //Auto Q
-            var autoQI = Config.Item("AutoQI").GetValue<bool>();
-            var autoQD = Config.Item("AutoQD").GetValue<bool>();
+            //var autoQI = Config.Item("AutoQI").GetValue<bool>();
+            //var autoQD = Config.Item("AutoQD").GetValue<bool>();
 
 
             if (ObjectManager.Player.Spellbook.CanUseSpell(SpellSlot.Q) == SpellState.Ready && combo)//&& (autoQD || autoQI))
