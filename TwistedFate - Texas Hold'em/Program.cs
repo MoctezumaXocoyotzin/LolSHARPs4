@@ -292,9 +292,14 @@ namespace TwistedFateTexasHoldEm
         private static void SkillFarming()
         {
             if(!Orbwalking.CanMove(40)) return;
-            var allMinions = MinionManager.GetMinions(ObjectManager.Player.ServerPosition, Q.Range);
+            var allMinions = MinionManager.GetMinions(ObjectManager.Player.ServerPosition, Orbwalking.GetRealAutoAttackRange(ObjectManager.Player));
             var useRedCardF = Config.Item("WFarm").GetValue<bool>();
             var useQF = Config.Item("QFarm").GetValue<bool>();
+
+            if (useRedCardF)
+            {
+                CardSelector.StartSelecting(Cards.Red);
+            }
 
             if(useQF && Q.IsReady())
             {
