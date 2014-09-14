@@ -292,19 +292,18 @@ namespace TwistedFateTexasHoldEm
         private static void SkillFarming()
         {
             if(!Orbwalking.CanMove(40)) return;
-            var allMinions = MinionManager.GetMinions(ObjectManager.Player.ServerPosition, Orbwalking.GetRealAutoAttackRange(ObjectManager.Player));
+            var allMinions = MinionManager.GetMinions(ObjectManager.Player.ServerPosition, Q.Range);
             var useRedCardF = Config.Item("WFarm").GetValue<bool>();
             var useQF = Config.Item("QFarm").GetValue<bool>();
-
-            if (useRedCardF)
-            {
-                CardSelector.StartSelecting(Cards.Red);
-            }
 
             if(useQF && Q.IsReady())
             {
                 foreach (var minion in allMinions.Where(minion => minion.IsValidTarget() && HealthPrediction.GetHealthPrediction(minion, (int)(ObjectManager.Player.Distance(minion) * 1000 / 1400)) < 0.75 * DamageLib.getDmg(minion, DamageLib.SpellType.Q, DamageLib.StageType.FirstDamage)))
                 {
+                    if (useRedCardF)
+                    {
+                        CardSelector.StartSelecting(Cards.Red);
+                    }
                     if (Vector3.Distance(minion.ServerPosition, ObjectManager.Player.ServerPosition) > Orbwalking.GetRealAutoAttackRange(ObjectManager.Player))
                     {
                         Q.CastIfHitchanceEquals(minion, HitChance.High, true);
