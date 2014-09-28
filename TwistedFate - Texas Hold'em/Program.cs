@@ -110,7 +110,7 @@ namespace TwistedFateTexasHoldEm
             var Drawings = new Menu("Drawings", "Drawings");
             Drawings.AddItem(new MenuItem("Qcircle", "Q Range").SetValue(new Circle(false, Color.FromArgb(100, 255, 0, 255))));
             Drawings.AddItem(new MenuItem("Rcircle", "R Range").SetValue(new Circle(false, Color.FromArgb(100, 255, 255, 255))));
-            Drawings.AddItem(new MenuItem("Rcircle2", "R Range (minimap)").SetValue(new Circle(true, Color.FromArgb(255, 255, 255, 255))));
+            Drawings.AddItem(new MenuItem("Rcircle2", "R Range (minimap)").SetValue(new Circle(false, Color.FromArgb(255, 255, 255, 255))));
             Drawings.AddItem(dmgAfterComboItem);
             Config.AddSubMenu(Drawings);
 

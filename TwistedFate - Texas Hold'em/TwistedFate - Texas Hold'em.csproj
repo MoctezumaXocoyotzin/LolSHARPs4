@@ -33,25 +33,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="clipper_library">
-      <HintPath>..\..\..\..\..\Downloads\LoL\LSharp\LeagueSharp\Assemblies\System\clipper_library.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\LoL\LSharp\LSharp\System\clipper_library.dll</HintPath>
     </Reference>
     <Reference Include="LeagueSharp">
-      <HintPath>..\..\..\..\..\Downloads\LoL\LSharp\LeagueSharp\Assemblies\System\LeagueSharp.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\LoL\LSharp\LSharp\System\LeagueSharp.dll</HintPath>
     </Reference>
     <Reference Include="LeagueSharp.Common">
-      <HintPath>..\..\..\..\..\Downloads\LoL\LSharp\LeagueSharp\Assemblies\System\LeagueSharp.Common.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\LoL\LSharp\LSharp\System\LeagueSharp.Common.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX">
-      <HintPath>..\..\..\..\..\Downloads\LoL\LSharp\LeagueSharp\Assemblies\System\SharpDX.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\LoL\LSharp\LSharp\System\SharpDX.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX.Direct3D9">
-      <HintPath>..\..\..\..\..\Downloads\LoL\LSharp\LeagueSharp\Assemblies\System\SharpDX.Direct3D9.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\LoL\LSharp\LSharp\System\SharpDX.Direct3D9.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX.Toolkit">
-      <HintPath>..\..\..\..\..\Downloads\LoL\LSharp\LeagueSharp\Assemblies\System\SharpDX.Toolkit.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\LoL\LSharp\LSharp\System\SharpDX.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX.Toolkit.Graphics">
-      <HintPath>..\..\..\..\..\Downloads\LoL\LSharp\LeagueSharp\Assemblies\System\SharpDX.Toolkit.Graphics.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\LoL\LSharp\LSharp\System\SharpDX.Toolkit.Graphics.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
