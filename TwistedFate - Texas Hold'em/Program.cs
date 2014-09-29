@@ -93,19 +93,6 @@ namespace TwistedFateTexasHoldEm
             r.AddItem(new MenuItem("AutoY", "Select yellow card after R").SetValue(true));
             Config.AddSubMenu(r);
 
-            var misc = new Menu("Misc", "Misc");
-            misc.AddItem(new MenuItem("PingLH", "Ping low health enemies (Only local)").SetValue(false));
-            Config.AddSubMenu(misc);
-
-            //Damage after combo:
-            var dmgAfterComboItem = new MenuItem("DamageAfterCombo", "Draw damage after combo").SetValue(true);
-            Utility.HpBarDamageIndicator.DamageToUnit = ComboDamage;
-            Utility.HpBarDamageIndicator.Enabled = dmgAfterComboItem.GetValue<bool>();
-            dmgAfterComboItem.ValueChanged += delegate(object sender, OnValueChangeEventArgs eventArgs)
-            {
-                Utility.HpBarDamageIndicator.Enabled = eventArgs.GetNewValue<bool>();
-            };
-
             /*Drawing*/
             var Drawings = new Menu("Drawings", "Drawings");
             Drawings.AddItem(new MenuItem("Qcircle", "Q Range").SetValue(new Circle(false, Color.FromArgb(100, 255, 0, 255))));
@@ -266,29 +253,6 @@ namespace TwistedFateTexasHoldEm
             Q.Cast(bestPosition.To3D(), true);
         }
 
-        private static float ComboDamage(Obj_AI_Hero hero)
-        {
-            var dmg = 0d;
-            dmg += DamageLib.getDmg(hero, DamageLib.SpellType.Q) * 2;
-            dmg += DamageLib.getDmg(hero, DamageLib.SpellType.W, DamageLib.StageType.ThirdDamage);
-            dmg += DamageLib.getDmg(hero, DamageLib.SpellType.E, DamageLib.StageType.ThirdDamage);
-
-
-            if (Items.HasItem("ItemBlackfireTorch"))
-            {
-                dmg += DamageLib.getDmg(hero, DamageLib.SpellType.DFG);
-                dmg = dmg * 1.2;
-            }
-
-            if (ObjectManager.Player.GetSpellSlot("summonerdot") != SpellSlot.Unknown)
-            {
-                dmg += DamageLib.getDmg(hero, DamageLib.SpellType.IGNITE);
-            }
-
-            return (float)dmg;
-        }
-
-
         private static void SkillFarming()
         {
             if(!Orbwalking.CanMove(40)) return;
@@ -316,11 +280,6 @@ namespace TwistedFateTexasHoldEm
 
         private static void Game_OnGameUpdate(EventArgs args)
         {
-            if (Config.Item("PingLH").GetValue<bool>())
-                foreach (var enemy in ObjectManager.Get<Obj_AI_Hero>().Where(h => h.IsValidTarget() && ComboDamage(h) > h.Health))
-                {
-                    Ping(enemy.Position.To2D());
-                }
 
             var combo = Config.Item("Combo").GetValue<KeyBind>().Active;
 
