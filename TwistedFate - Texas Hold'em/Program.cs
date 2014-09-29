@@ -98,7 +98,6 @@ namespace TwistedFateTexasHoldEm
             Drawings.AddItem(new MenuItem("Qcircle", "Q Range").SetValue(new Circle(false, Color.FromArgb(100, 255, 0, 255))));
             Drawings.AddItem(new MenuItem("Rcircle", "R Range").SetValue(new Circle(false, Color.FromArgb(100, 255, 255, 255))));
             Drawings.AddItem(new MenuItem("Rcircle2", "R Range (minimap)").SetValue(new Circle(false, Color.FromArgb(255, 255, 255, 255))));
-            Drawings.AddItem(dmgAfterComboItem);
             Config.AddSubMenu(Drawings);
 
 
@@ -262,7 +261,7 @@ namespace TwistedFateTexasHoldEm
 
             if(useQF && Q.IsReady())
             {
-                foreach (var minion in allMinions.Where(minion => minion.IsValidTarget() && HealthPrediction.GetHealthPrediction(minion, (int)(ObjectManager.Player.Distance(minion) * 1000 / 1400)) < 0.75 * DamageLib.getDmg(minion, DamageLib.SpellType.Q, DamageLib.StageType.FirstDamage)))
+                foreach (var minion in allMinions.Where(minion => minion.IsValidTarget() && HealthPrediction.GetHealthPrediction(minion, (int)(ObjectManager.Player.Distance(minion) * 1000 / 1400)) < 0.75 * ObjectManager.Player.GetSpellDamage(minion, SpellSlot.Q, 0)))
                 {
                     if (useRedCardF)
                     {
