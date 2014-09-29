@@ -32,6 +32,6 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("4.16.1.*")]
-[assembly: AssemblyFileVersion("4.16.1.*")]
-[assembly: AssemblyInformationalVersion("4.16.1.* WORKS ON LOLPATCH 4.16")]
+[assembly: AssemblyVersion("4.17.1.*")]
+[assembly: AssemblyFileVersion("4.17.1.*")]
+[assembly: AssemblyInformationalVersion("4.17.1.* WORKS ON LOLPATCH 4.17")]
