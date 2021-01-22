@@ -4679,8 +4679,8 @@ IkaTools = (function() {
       update(Constants.Military.MORTAR_SHIP, 'js_barracksUnitUnitsAvailable6');
       update(Constants.Military.ROCKET_SHIP, 'js_barracksUnitUnitsAvailable7');
       update(Constants.Military.SUBMARINE, 'js_barracksUnitUnitsAvailable8');
-      update(Constants.Military.PADDLE_SPEED_SHIP, 'js_barracksUnitUnitsAvailable9');
-      update(Constants.Military.BALLOON_CARRIER, 'js_barracksUnitUnitsAvailable10');
+      update(Constants.Military.PADDLE_SPEED_SHIP, 'js_barracksUnitUnitsAvailable10');
+      update(Constants.Military.BALLOON_CARRIER, 'js_barracksUnitUnitsAvailable9');
       update(Constants.Military.TENDER, 'js_barracksUnitUnitsAvailable11');
       
       military._markPresentUpdated(false, true);
