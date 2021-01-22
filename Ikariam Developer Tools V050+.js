@@ -4674,8 +4674,8 @@ IkaTools = (function() {
       update(Constants.Military.FLAME_THROWER, 'js_barracksUnitUnitsAvailable1');
       update(Constants.Military.STEAM_RAM, 'js_barracksUnitUnitsAvailable2');
       update(Constants.Military.RAM_SHIP, 'js_barracksUnitUnitsAvailable3');
-      update(Constants.Military.CATAPULT_SHIP, 'js_barracksUnitUnitsAvailable4');
-      update(Constants.Military.BALLISTA_SHIP, 'js_barracksUnitUnitsAvailable5');
+      update(Constants.Military.CATAPULT_SHIP, 'js_barracksUnitUnitsAvailable5');
+      update(Constants.Military.BALLISTA_SHIP, 'js_barracksUnitUnitsAvailable4');
       update(Constants.Military.MORTAR_SHIP, 'js_barracksUnitUnitsAvailable6');
       update(Constants.Military.ROCKET_SHIP, 'js_barracksUnitUnitsAvailable7');
       update(Constants.Military.SUBMARINE, 'js_barracksUnitUnitsAvailable8');
@@ -5680,8 +5680,8 @@ IkaTools = (function() {
         military._setCount(Constants.Military.RAM_SHIP, parseInt(baseNavyCount && $(unitTds[16 + navyOffset]).text()) || 0);
         military._setCount(Constants.Military.FLAME_THROWER, parseInt(baseNavyCount && $(unitTds[14 + navyOffset]).text()) || 0);
         military._setCount(Constants.Military.STEAM_RAM, parseInt(baseNavyCount && $(unitTds[15 + navyOffset]).text()) || 0);
-        military._setCount(Constants.Military.BALLISTA_SHIP, parseInt(baseNavyCount && $(unitTds[18 + navyOffset]).text()) || 0);
-        military._setCount(Constants.Military.CATAPULT_SHIP, parseInt(baseNavyCount && $(unitTds[17 + navyOffset]).text()) || 0);
+        military._setCount(Constants.Military.BALLISTA_SHIP, parseInt(baseNavyCount && $(unitTds[17 + navyOffset]).text()) || 0);
+        military._setCount(Constants.Military.CATAPULT_SHIP, parseInt(baseNavyCount && $(unitTds[18 + navyOffset]).text()) || 0);
         military._setCount(Constants.Military.MORTAR_SHIP, parseInt(baseNavyCount && $(unitTds[19 + navyOffset]).text()) || 0);
         military._setCount(Constants.Military.SUBMARINE, parseInt(baseNavyCount && $(unitTds[21 + navyOffset]).text()) || 0);
         military._setCount(Constants.Military.PADDLE_SPEED_SHIP, parseInt(baseNavyCount && $(unitTds[22 + navyOffset]).text()) || 0);
