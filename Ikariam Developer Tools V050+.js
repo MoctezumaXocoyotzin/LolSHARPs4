@@ -4524,17 +4524,17 @@ IkaTools = (function() {
       e |= military._updatePresent(Constants.Military.DOCTOR, parseInt(armyTds[14].innerHTML));
 
       var navyTds = $('#tabShips').find('tr.count td');        
-      e |= military._updatePresent(Constants.Military.RAM_SHIP, parseInt(navyTds[3].innerHTML));
-      e |= military._updatePresent(Constants.Military.FLAME_THROWER, parseInt(navyTds[1].innerHTML));
-      e |= military._updatePresent(Constants.Military.STEAM_RAM, parseInt(navyTds[2].innerHTML));
-      e |= military._updatePresent(Constants.Military.BALLISTA_SHIP, parseInt(navyTds[4].innerHTML));
-      e |= military._updatePresent(Constants.Military.CATAPULT_SHIP, parseInt(navyTds[5].innerHTML));
-      e |= military._updatePresent(Constants.Military.MORTAR_SHIP, parseInt(navyTds[6].innerHTML));
-      e |= military._updatePresent(Constants.Military.SUBMARINE, parseInt(navyTds[8].innerHTML));
-      e |= military._updatePresent(Constants.Military.PADDLE_SPEED_SHIP, parseInt(navyTds[10].innerHTML));
-      e |= military._updatePresent(Constants.Military.BALLOON_CARRIER, parseInt(navyTds[9].innerHTML));
-      e |= military._updatePresent(Constants.Military.TENDER, parseInt(navyTds[11].innerHTML));
-      e |= military._updatePresent(Constants.Military.ROCKET_SHIP, parseInt(navyTds[7].innerHTML));
+      e |= military._updatePresent(Constants.Military.RAM_SHIP, parseInt(navyTds[2].innerHTML));
+      e |= military._updatePresent(Constants.Military.FLAME_THROWER, parseInt(navyTds[0].innerHTML));
+      e |= military._updatePresent(Constants.Military.STEAM_RAM, parseInt(navyTds[1].innerHTML));
+      e |= military._updatePresent(Constants.Military.BALLISTA_SHIP, parseInt(navyTds[3].innerHTML));
+      e |= military._updatePresent(Constants.Military.CATAPULT_SHIP, parseInt(navyTds[4].innerHTML));
+      e |= military._updatePresent(Constants.Military.MORTAR_SHIP, parseInt(navyTds[5].innerHTML));
+      e |= military._updatePresent(Constants.Military.SUBMARINE, parseInt(navyTds[7].innerHTML));
+      e |= military._updatePresent(Constants.Military.PADDLE_SPEED_SHIP, parseInt(navyTds[9].innerHTML));
+      e |= military._updatePresent(Constants.Military.BALLOON_CARRIER, parseInt(navyTds[8].innerHTML));
+      e |= military._updatePresent(Constants.Military.TENDER, parseInt(navyTds[10].innerHTML));
+      e |= military._updatePresent(Constants.Military.ROCKET_SHIP, parseInt(navyTds[6].innerHTML));
       
       military._markPresentUpdated();
       
