@@ -4530,9 +4530,9 @@ IkaTools = (function() {
       e |= military._updatePresent(Constants.Military.BALLISTA_SHIP, parseInt(navyTds[4].innerHTML));
       e |= military._updatePresent(Constants.Military.CATAPULT_SHIP, parseInt(navyTds[5].innerHTML));
       e |= military._updatePresent(Constants.Military.MORTAR_SHIP, parseInt(navyTds[6].innerHTML));
-      e |= military._updatePresent(Constants.Military.SUBMARINE, parseInt(navyTds[8].innerHTML));
+      e |= military._updatePresent(Constants.Military.SUBMARINE, parseInt(navyTds[10].innerHTML));
       e |= military._updatePresent(Constants.Military.PADDLE_SPEED_SHIP, parseInt(navyTds[9].innerHTML));
-      e |= military._updatePresent(Constants.Military.BALLOON_CARRIER, parseInt(navyTds[10].innerHTML));
+      e |= military._updatePresent(Constants.Military.BALLOON_CARRIER, parseInt(navyTds[8].innerHTML));
 
       e |= military._updatePresent(Constants.Military.ROCKET_SHIP, parseInt(navyTds[7].innerHTML));
       
