@@ -494,7 +494,7 @@ IkaTools = (function() {
       var headers = {
         'User-agent': navigator.userAgent, 
         'Cookie': document.cookie,
-        'Referer': 'http://' + document.domain + '/index.php',
+        'Referer': 'https://' + document.domain + '/index.php',
       };
       if(options.method == 'POST') {
         headers['Content-type'] = 'application/x-www-form-urlencoded';
@@ -1000,7 +1000,7 @@ IkaTools = (function() {
     }
     
     function makeFullIkariamUrl(params, anchor) {
-      return 'http://' + getDomain() + '/index.php?' +
+      return 'https://' + getDomain() + '/index.php?' +
              $.map(params, function(value, key) { 
                  return encodeURIComponent(key) + '=' + 
                         encodeURIComponent(value);
@@ -5048,7 +5048,7 @@ IkaTools = (function() {
     
     function updateMovements(callback) {
       View.backgroundGetIkariamPage(
-        'http://' + document.domain + '/index.php?view=militaryAdvisor&activeTab=militaryMovements&ajax=1',
+        'https://' + document.domain + '/index.php?view=militaryAdvisor&activeTab=militaryMovements&ajax=1',
         function updateMovementsCallback(response) {
           var dataResponse = JSON.parse(response.responseText);
           Utils.iterateIkariamAjaxResponse(dataResponse, function(index, name, data) {
@@ -5242,11 +5242,11 @@ IkaTools = (function() {
             }
           }
           Utils.backgroundFetchIkariamFullPage(
-              'http://' + document.domain + '/index.php?view=island&cityId=' + this.id,
+              'https://' + document.domain + '/index.php?view=island&cityId=' + this.id,
               this._refreshIslandCallback.bind(this, doneLoading));
           if (hasSpiesPresent) {
             Utils.backgroundFetchIkariamFullPage(
-                'http://' + document.domain + '/index.php?view=city&cityId=' + this.id,
+                'https://' + document.domain + '/index.php?view=city&cityId=' + this.id,
                 this._refreshCityCallback.bind(this, doneLoading));
           }
         },
