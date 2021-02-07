@@ -2596,7 +2596,7 @@ IkaTools = (function() {
     },
     
     GamePlay: {
-      BUILDING_SPOTS: 19,
+      BUILDING_SPOTS: 20,
       HAPPINESS_PER_CULTURAL_GOOD: 50,
       HAPPINESS_PER_WINE_SERVING_LEVEL: 60,
       BASE_RESOURCE_PROTECTION: 100,
