@@ -4633,20 +4633,20 @@ IkaTools = (function() {
         }
       }
       
-      update(Constants.Military.HOPLITE, 'js_barracksUnitUnitsAvailable1');
-      update(Constants.Military.STEAM_GIANT, 'js_barracksUnitUnitsAvailable2');
-      update(Constants.Military.SPEARMAN, 'js_barracksUnitUnitsAvailable3');
-      update(Constants.Military.SWORDSMAN, 'js_barracksUnitUnitsAvailable4');
-      update(Constants.Military.SLINGER, 'js_barracksUnitUnitsAvailable5');
-      update(Constants.Military.ARCHER, 'js_barracksUnitUnitsAvailable6');
-      update(Constants.Military.GUNNER, 'js_barracksUnitUnitsAvailable7');
-      update(Constants.Military.BATTERING_RAM, 'js_barracksUnitUnitsAvailable8');
-      update(Constants.Military.CATAPULT, 'js_barracksUnitUnitsAvailable9');
-      update(Constants.Military.MORTAR, 'js_barracksUnitUnitsAvailable10');
-      update(Constants.Military.GYROCOPTER, 'js_barracksUnitUnitsAvailable11');
-      update(Constants.Military.BALLOON_BOMBADIER, 'js_barracksUnitUnitsAvailable12');
-      update(Constants.Military.COOK, 'js_barracksUnitUnitsAvailable13');
-      update(Constants.Military.DOCTOR, 'js_barracksUnitUnitsAvailable14');
+      	update(Constants.Military.HOPLITE, 'js_barracksUnitUnitsAvailable1');
+	update(Constants.Military.SPEARMAN, 'js_barracksUnitUnitsAvailable2');
+      	update(Constants.Military.SWORDSMAN, 'js_barracksUnitUnitsAvailable3');
+      	update(Constants.Military.SLINGER, 'js_barracksUnitUnitsAvailable4');
+	update(Constants.Military.STEAM_GIANT, 'js_barracksUnitUnitsAvailable5');
+	update(Constants.Military.ARCHER, 'js_barracksUnitUnitsAvailable6');
+	update(Constants.Military.GUNNER, 'js_barracksUnitUnitsAvailable7');
+	update(Constants.Military.BATTERING_RAM, 'js_barracksUnitUnitsAvailable8');
+	update(Constants.Military.CATAPULT, 'js_barracksUnitUnitsAvailable9');
+	update(Constants.Military.MORTAR, 'js_barracksUnitUnitsAvailable10');
+	update(Constants.Military.GYROCOPTER, 'js_barracksUnitUnitsAvailable11');
+	update(Constants.Military.BALLOON_BOMBADIER, 'js_barracksUnitUnitsAvailable12');
+	update(Constants.Military.COOK, 'js_barracksUnitUnitsAvailable13');
+	update(Constants.Military.DOCTOR, 'js_barracksUnitUnitsAvailable14');
           
       military._markPresentUpdated(true, false);
 
@@ -4674,8 +4674,8 @@ IkaTools = (function() {
       update(Constants.Military.FLAME_THROWER, 'js_barracksUnitUnitsAvailable1');
       update(Constants.Military.STEAM_RAM, 'js_barracksUnitUnitsAvailable2');
       update(Constants.Military.RAM_SHIP, 'js_barracksUnitUnitsAvailable3');
-      update(Constants.Military.CATAPULT_SHIP, 'js_barracksUnitUnitsAvailable5');
       update(Constants.Military.BALLISTA_SHIP, 'js_barracksUnitUnitsAvailable4');
+      update(Constants.Military.CATAPULT_SHIP, 'js_barracksUnitUnitsAvailable5');
       update(Constants.Military.MORTAR_SHIP, 'js_barracksUnitUnitsAvailable6');
       update(Constants.Military.ROCKET_SHIP, 'js_barracksUnitUnitsAvailable7');
       update(Constants.Military.SUBMARINE, 'js_barracksUnitUnitsAvailable8');
