@@ -4532,9 +4532,9 @@ IkaTools = (function() {
 	    e |= military._updatePresent(Constants.Military.MORTAR_SHIP, parseInt(navyTds[6].innerHTML));
 	    e |= military._updatePresent(Constants.Military.ROCKET_SHIP, parseInt(navyTds[7].innerHTML));
 	    e |= military._updatePresent(Constants.Military.SUBMARINE, parseInt(navyTds[8].innerHTML));
-	    e |= military._updatePresent(Constants.Military.BALLOON_CARRIER, parseInt(navyTds[9].innerHTML));
+	    e |= military._updatePresent(Constants.Military.BALLOON_CARRIER, parseInt(navyTds[10].innerHTML));
 	    e |= military._updatePresent(Constants.Military.TENDER, parseInt(navyTds[11].innerHTML));
-	    e |= military._updatePresent(Constants.Military.PADDLE_SPEED_SHIP, parseInt(navyTds[10].innerHTML));
+	    e |= military._updatePresent(Constants.Military.PADDLE_SPEED_SHIP, parseInt(navyTds[9].innerHTML));
 
       military._markPresentUpdated();
       
@@ -4679,8 +4679,8 @@ IkaTools = (function() {
       update(Constants.Military.MORTAR_SHIP, 'js_barracksUnitUnitsAvailable6');
       update(Constants.Military.ROCKET_SHIP, 'js_barracksUnitUnitsAvailable7');
       update(Constants.Military.SUBMARINE, 'js_barracksUnitUnitsAvailable8');
-      update(Constants.Military.PADDLE_SPEED_SHIP, 'js_barracksUnitUnitsAvailable10');
-      update(Constants.Military.BALLOON_CARRIER, 'js_barracksUnitUnitsAvailable9');
+      update(Constants.Military.PADDLE_SPEED_SHIP, 'js_barracksUnitUnitsAvailable9');
+      update(Constants.Military.BALLOON_CARRIER, 'js_barracksUnitUnitsAvailable10');
       update(Constants.Military.TENDER, 'js_barracksUnitUnitsAvailable11');
       
       military._markPresentUpdated(false, true);
